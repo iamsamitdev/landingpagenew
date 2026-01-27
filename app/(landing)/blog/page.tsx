@@ -5,6 +5,24 @@ import Image from 'next/image'
 import Navbar from '@/components/landing/Navbar'
 import Footer from '@/components/landing/Footer'
 
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+  title: "Blog | My AI Business",
+  description: "Read the latest articles and news about AI technology, web development, and more.",
+  keywords: [
+    "AI Blog",
+    "Artificial Intelligence Articles",
+    "Tech News",
+    "Web Development",
+    "Programming Tutorials",
+    "AI Trends",
+    "Machine Learning",
+    "Data Science",
+    "Tech Insights",
+  ],
+}
+
 // Author Icon SVG
 const AuthorIcon = () => (
   <svg width="18" height="18" viewBox="0 0 18 18" fill="currentColor">
