@@ -61,15 +61,32 @@ function formatDate(dateString: string | null | undefined): string {
   })
 }
 
+// Rich Text Node Interface
+interface RichTextNode {
+  type: string
+  text?: string
+  format?: number
+  tag?: number
+  url?: string
+  listType?: string
+  children?: RichTextNode[]
+}
+
+interface RichTextContent {
+  root?: {
+    children?: RichTextNode[]
+  }
+}
+
 // Render Rich Text Content
-function RichTextContent({ content }: { content: any }) {
+function RichTextContentRenderer({ content }: { content: RichTextContent }) {
   if (!content?.root?.children) return null
 
-  const renderNode = (node: any, index: number): React.ReactNode => {
+  const renderNode = (node: RichTextNode, index: number): React.ReactNode => {
     if (node.type === 'paragraph') {
       return (
         <p key={index} className="mb-6 text-lg leading-relaxed text-slate-700 dark:text-slate-300">
-          {node.children?.map((child: any, i: number) => renderNode(child, i))}
+          {node.children?.map((child: RichTextNode, i: number) => renderNode(child, i))}
         </p>
       )
     }
@@ -77,7 +94,7 @@ function RichTextContent({ content }: { content: any }) {
     if (node.type === 'heading') {
       const level = node.tag || 2
       const className = "mt-10 mb-4 text-2xl font-bold text-slate-900 dark:text-white"
-      const children = node.children?.map((child: any, i: number) => renderNode(child, i))
+      const children = node.children?.map((child: RichTextNode, i: number) => renderNode(child, i))
       
       switch (level) {
         case 1: return <h1 key={index} className={className}>{children}</h1>
@@ -94,7 +111,7 @@ function RichTextContent({ content }: { content: any }) {
       const ListTag = node.listType === 'number' ? 'ol' : 'ul'
       return (
         <ListTag key={index} className={`mb-6 pl-6 ${node.listType === 'number' ? 'list-decimal' : 'list-disc'} text-lg text-slate-700 dark:text-slate-300`}>
-          {node.children?.map((child: any, i: number) => renderNode(child, i))}
+          {node.children?.map((child: RichTextNode, i: number) => renderNode(child, i))}
         </ListTag>
       )
     }
@@ -102,7 +119,7 @@ function RichTextContent({ content }: { content: any }) {
     if (node.type === 'listitem') {
       return (
         <li key={index} className="mb-2">
-          {node.children?.map((child: any, i: number) => renderNode(child, i))}
+          {node.children?.map((child: RichTextNode, i: number) => renderNode(child, i))}
         </li>
       )
     }
@@ -110,7 +127,7 @@ function RichTextContent({ content }: { content: any }) {
     if (node.type === 'quote') {
       return (
         <blockquote key={index} className="my-8 border-l-4 border-blue-500 pl-6 italic text-xl text-slate-600 dark:text-slate-400">
-          {node.children?.map((child: any, i: number) => renderNode(child, i))}
+          {node.children?.map((child: RichTextNode, i: number) => renderNode(child, i))}
         </blockquote>
       )
     }
@@ -118,10 +135,10 @@ function RichTextContent({ content }: { content: any }) {
     if (node.type === 'text') {
       let text: React.ReactNode = node.text
 
-      if (node.format & 1) text = <strong key={index}>{text}</strong>
-      if (node.format & 2) text = <em key={index}>{text}</em>
-      if (node.format & 8) text = <u key={index}>{text}</u>
-      if (node.format & 16) text = <code key={index} className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">{text}</code>
+      if (node.format && node.format & 1) text = <strong key={index}>{text}</strong>
+      if (node.format && node.format & 2) text = <em key={index}>{text}</em>
+      if (node.format && node.format & 8) text = <u key={index}>{text}</u>
+      if (node.format && node.format & 16) text = <code key={index} className="bg-slate-100 dark:bg-slate-800 px-1.5 py-0.5 rounded text-sm">{text}</code>
 
       return text
     }
@@ -129,7 +146,7 @@ function RichTextContent({ content }: { content: any }) {
     if (node.type === 'link') {
       return (
         <a key={index} href={node.url} className="text-blue-600 hover:underline dark:text-blue-400" target="_blank" rel="noopener noreferrer">
-          {node.children?.map((child: any, i: number) => renderNode(child, i))}
+          {node.children?.map((child: RichTextNode, i: number) => renderNode(child, i))}
         </a>
       )
     }
@@ -139,7 +156,7 @@ function RichTextContent({ content }: { content: any }) {
 
   return (
     <div className="prose-content">
-      {content.root.children.map((node: any, index: number) => renderNode(node, index))}
+      {content.root.children?.map((node: RichTextNode, index: number) => renderNode(node, index))}
     </div>
   )
 }
@@ -254,7 +271,7 @@ export default async function BlogDetail({
         <div className="max-w-3xl mx-auto">
           {/* Rich Text Content */}
           {post.content ? (
-            <RichTextContent content={post.content} />
+            <RichTextContentRenderer content={post.content as RichTextContent} />
           ) : (
             <p className="text-lg text-slate-600 dark:text-slate-400">
               No content available for this post.

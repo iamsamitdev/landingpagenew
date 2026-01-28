@@ -54,7 +54,7 @@ function Footer() {
     { label: "Account", href: "/auth/signin" },
   ]
 
-  const onSubmit = async (data: any) => {
+  const onSubmit = async () => {
     // 1. ส่งข้อมูลเข้า Database/API
     // await saveToDatabase(data);
 

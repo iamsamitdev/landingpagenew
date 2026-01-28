@@ -1,11 +1,12 @@
 "use client"
 
-import { useEffect } from "react"
+import { useEffect, Suspense } from "react"
 import { usePathname, useSearchParams } from "next/navigation"
 import Script from "next/script"
 import { FB_PIXEL_ID, pageview } from "@/lib/fpixel"
 
-export default function FacebookPixel() {
+// Separate component that uses useSearchParams
+function FacebookPixelEvents() {
   const pathname = usePathname()
   const searchParams = useSearchParams()
 
@@ -14,6 +15,10 @@ export default function FacebookPixel() {
     pageview()
   }, [pathname, searchParams])
 
+  return null
+}
+
+export default function FacebookPixel() {
   return (
     <>
       {/* ฝัง Global Script */}
@@ -34,6 +39,10 @@ export default function FacebookPixel() {
           `,
         }}
       />
+      {/* Wrap useSearchParams in Suspense boundary */}
+      <Suspense fallback={null}>
+        <FacebookPixelEvents />
+      </Suspense>
     </>
   )
 }
