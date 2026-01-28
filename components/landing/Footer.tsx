@@ -1,3 +1,5 @@
+"use client";
+import { event } from "@/lib/fpixel";
 import Image from "next/image"
 import Link from "next/link"
 
@@ -51,6 +53,19 @@ function Footer() {
     { label: "Our Blog", href: "/blog" },
     { label: "Account", href: "/auth/signin" },
   ]
+
+  const onSubmit = async (data: any) => {
+    // 1. ส่งข้อมูลเข้า Database/API
+    // await saveToDatabase(data);
+
+    // 2. ยิง Pixel บอก Facebook ว่าได้ Lead แล้ว
+    event("Lead", {
+      content_name: "Contact Form",
+      value: 100, 
+    });
+    
+    alert("ขอบคุณครับ เราจะติดต่อกลับโดยเร็ว");
+  };
 
   return (
     <footer className="pt-14 sm:pt-20 lg:pt-32.5 overflow-hidden">
@@ -201,7 +216,7 @@ function Footer() {
               <p className="text-slate-600 dark:text-slate-400 mb-6 text-base">
                 Subscribe to receive future updates
               </p>
-              <form className="relative">
+              <form className="relative" onSubmit={onSubmit}>
                 <input
                   placeholder="Email address"
                   className="text-slate-600 dark:text-slate-300 outline-none focus:border-blue-500 placeholder:text-slate-400 w-full rounded-md border border-slate-200 py-3 pl-5 pr-12 text-base dark:border-slate-700 dark:bg-slate-800"

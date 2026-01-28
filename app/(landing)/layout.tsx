@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Inter, Anuphan } from "next/font/google"
 import "./globals.css";
+import FacebookPixel from "@/components/facebook/FacebookPixel"
 
 const inter = Inter({
   variable: "--font-inter",
@@ -27,6 +28,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${anuphan.variable} antialiased`}
       >
+        <FacebookPixel />
         {children}
       </body>
     </html>

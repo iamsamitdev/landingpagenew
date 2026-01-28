@@ -7,6 +7,7 @@ import { notFound } from 'next/navigation'
 import type { Metadata } from 'next'
 import Navbar from '@/components/landing/Navbar'
 import Footer from '@/components/landing/Footer'
+import ArticleReadTracker from "@/components/facebook/ArticleReadTracker"
 
 // Generate metadata for SEO
 export async function generateMetadata({ 
@@ -178,6 +179,7 @@ export default async function BlogDetail({
   return (
     <article className="min-h-screen bg-white dark:bg-slate-950">
       <Navbar />
+      <ArticleReadTracker title={post.title} />
       {/* Hero Section */}
       <header className="relative pt-28 pb-16 lg:pt-36 lg:pb-24">
         {/* Background Gradient */}

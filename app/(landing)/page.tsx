@@ -5,7 +5,7 @@ import Features from '@/components/landing/Features'
 import About from '@/components/landing/About'
 import Team from '@/components/landing/Team'
 import Testimonial from '@/components/landing/Testimonial'
-import Blog from '@/components/landing/Blog'
+// import Blog from '@/components/landing/Blog'
 import CTA from '@/components/landing/CTA'
 import ScrollToTop from '@/components/landing/ScrollToTop'
 
@@ -37,7 +37,7 @@ export default function Home() {
       <About />
       <Team />
       <Testimonial />
-      <Blog />
+      {/* <Blog /> */}
       <CTA />
       <Footer />
       <ScrollToTop />
