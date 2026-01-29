@@ -77,7 +77,7 @@ function CTA() {
   return (
     <section className="pt-14 sm:pt-20 lg:pt-32.5 overflow-hidden">
       <div className="px-4 md:px-8 lg:px-12 xl:container mx-auto overflow-hidden">
-        <div className="relative overflow-hidden bg-linear-to-br from-blue-600 via-purple-600 to-pink-500 px-6 sm:px-10 py-12 sm:py-16 shadow-2xl rounded-2xl">
+        <div className="relative overflow-hidden bg-blue-600 dark:bg-blue-700 px-6 sm:px-10 py-12 sm:py-16 shadow-2xl rounded-2xl">
           {/* Animated Background Elements */}
           <div className="absolute inset-0 overflow-hidden">
             <div className="absolute -top-40 -right-40 w-80 h-80 bg-white/10 rounded-full blur-3xl animate-pulse"></div>
@@ -125,7 +125,7 @@ function CTA() {
             {/* CTA Button */}
             <Link
               href="#"
-              className="group relative inline-flex items-center gap-3 bg-linear-to-r from-yellow-400 to-orange-500 hover:from-yellow-500 hover:to-orange-600 text-slate-900 font-bold text-lg sm:text-xl px-10 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+              className="group relative inline-flex items-center gap-3 bg-yellow-400 hover:bg-yellow-500 text-slate-900 font-bold text-lg sm:text-xl px-10 py-4 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
             >
               <span>🛒 สั่งซื้อทันที</span>
               <svg

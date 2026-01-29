@@ -89,8 +89,8 @@ function About() {
                 aria-pressed={activeTab === tab.id}
                 className={`w-full border-b px-2 pb-6 pt-8 font-medium text-base lg:pb-7 lg:pt-9 transition-colors ${
                   activeTab === tab.id
-                    ? "border-blue-600 text-blue-600"
-                    : "border-slate-200 text-slate-600 hover:border-blue-600 hover:text-blue-600 dark:border-slate-700 dark:text-white dark:hover:border-blue-500"
+                    ? "border-blue-600 text-blue-600 dark:border-blue-500 dark:text-blue-400"
+                    : "border-slate-200 text-slate-600 hover:border-blue-600 hover:text-blue-600 dark:border-slate-700 dark:text-slate-300 dark:hover:border-blue-500 dark:hover:text-blue-400"
                 }`}
               >
                 {tab.label}

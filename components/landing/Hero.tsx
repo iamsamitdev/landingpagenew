@@ -42,7 +42,7 @@ function Hero() {
               </p>
 
               {/* Buttons */}
-              <Button onClick={handlePurchaseClick}>
+              <Button onClick={handlePurchaseClick} size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full px-8 py-6 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
                 สั่งซื้อทันที (2,990 บาท)
               </Button>
             </div>
