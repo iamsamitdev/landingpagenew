@@ -97,18 +97,18 @@ function CTA() {
                 <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-white opacity-75"></span>
                 <span className="relative inline-flex rounded-full h-2 w-2 bg-white"></span>
               </span>
-              🔥 ข้อเสนอพิเศษ! หมดเขตเร็วๆ นี้
+              🔥 โปรโมชั่นพิเศษ! สมาชิกลด 10% ทันที
             </div>
 
             {/* Headline */}
             <h2 className="text-white text-2xl sm:text-3xl lg:text-4xl font-bold mb-4 leading-tight">
-              โปรโมชั่นสุดพิเศษ ลด 50%
+              สมัครสมาชิกวันนี้
               <br />
-              <span className="text-yellow-300">สำหรับลูกค้าใหม่เท่านั้น!</span>
+              <span className="text-yellow-300">รับส่วนลด 10% ทุกออเดอร์!</span>
             </h2>
 
             <p className="text-white/80 text-base sm:text-lg mb-8 max-w-xl">
-              อย่าพลาด! ข้อเสนอนี้จะหมดลงใน
+              อย่าพลาด! โปรโมชั่นสำหรับสมาชิกเท่านั้น หมดเขตใน
             </p>
 
             {/* Countdown Timer */}
@@ -149,19 +149,19 @@ function CTA() {
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
                 </svg>
-                รับประกันคืนเงิน 30 วัน
+                เปลี่ยน/คืนสินค้าภายใน 7 วัน
               </span>
               <span className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M5 9V7a5 5 0 0110 0v2a2 2 0 012 2v5a2 2 0 01-2 2H5a2 2 0 01-2-2v-5a2 2 0 012-2zm8-2v2H7V7a3 3 0 016 0z" clipRule="evenodd" />
                 </svg>
-                ชำระเงินปลอดภัย
+                ชำระเงินปลอดภัย SSL
               </span>
               <span className="flex items-center gap-1">
                 <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
                   <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
                 </svg>
-                บริการ 24/7
+                แอดมิน จัน-เสาร์ 09.00-18.00
               </span>
             </div>
           </div>

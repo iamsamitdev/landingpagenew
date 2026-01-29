@@ -64,18 +64,18 @@ function Navbar() {
   }, [isDarkMode])
 
   const navLinks = [
-    { href: "/#home", label: "Home" },
-    { href: "/#features", label: "Features" },
-    { href: "/#about", label: "About" },
-    { href: "/#team", label: "Team" },
-    { href: "/#testimonial", label: "Testimonial" },
-    { href: "/blog", label: "Blog" },
+    { href: "/#home", label: "หน้าแรก" },
+    { href: "/#features", label: "บริการ" },
+    { href: "/#about", label: "เกี่ยวกับเรา" },
+    { href: "/#team", label: "ทีมงาน" },
+    { href: "/#testimonial", label: "รีวิว" },
+    { href: "/blog", label: "บทความ" },
   ]
 
   const pagesLinks = [
-    { href: "/docs", label: "Docs" },
-    { href: "/support", label: "Support" },
-    { href: "/error", label: "Error 404" },
+    { href: "/#how-to-order", label: "คู่มือการสั่งซื้อ" },
+    { href: "/#return-policy", label: "นโยบายคืนสินค้า" },
+    { href: "/#contact", label: "ติดต่อเรา" },
   ]
 
   return (
@@ -128,7 +128,7 @@ function Navbar() {
                     onClick={() => setIsDropdownOpen(!isDropdownOpen)}
                     onMouseEnter={() => setIsDropdownOpen(true)}
                   >
-                    More
+                  เพิ่มเติม
                     <span className="pl-2">
                       <svg 
                         width="14" 
@@ -216,7 +216,7 @@ function Navbar() {
               href="/admin" 
               className="bg-blue-600 hover:bg-blue-700 whitespace-nowrap rounded-md px-4 py-2 lg:px-6 lg:py-2.5 text-center text-white text-sm lg:text-base font-medium transition-colors"
             >
-              Sign In
+              เข้าสู่ระบบ
             </Link>
           </div>
 

@@ -7,11 +7,11 @@ import { Button } from "@/components/ui/button"
 function Hero() {
 
   const handlePurchaseClick = () => {
-    // ส่ง Event 'InitiateCheckout' หรือชื่อ Custom ที่เราตั้งเอง
+    // ส่ง Event 'InitiateCheckout'
     event("InitiateCheckout", {
       currency: "THB",
-      value: 2990, // มูลค่าสินค้า (ใส่เพื่อให้ Facebook คำนวณ ROI ได้)
-      content_name: "AI Course Bundle"
+      value: 990,
+      content_name: "Smart Electronic Products"
     });
     
     // โค้ดเปลี่ยนหน้าหรือเปิด Modal ทำงานต่อตรงนี้...
@@ -28,22 +28,22 @@ function Hero() {
               {/* Badge */}
               <span className="bg-blue-500/5 font-medium text-blue-500 mb-8 inline-block rounded-full px-5 py-2.5 text-base dark:bg-white/10 dark:text-white">
                 <span className="bg-blue-500 mr-2 inline-block h-2 w-2 rounded-full"></span>
-                Next.js Starter for Business
+                เปิดให้บริการตั้งแต่ปี 2020
               </span>
 
               {/* Heading */}
               <h1 className="font-bold mb-5 text-2xl sm:text-4xl md:text-[50px] md:leading-15 text-slate-900 dark:text-white">
-                Next.js Boilerplate for Your Business
+                Smart Electronic Thailand
               </h1>
 
               {/* Description */}
               <p className="text-slate-600 dark:text-slate-400 mb-12 text-base leading-relaxed">
-                Handcrafted Next.js starter for your next - Startup, Business, Agency or SaaS Website. Comes with refreshing design, integrations and everything you need to kickstart your next web project.
+                จำหน่ายอุปกรณ์เสริมสำหรับสมาร์ทโฟนครบวงจร เคสกันกระแทก ฟิล์มกระจก สายชาร์จ Fast Charge หัวชาร์จ Power Bank หูฟัง และ Gadget ล้ำๆ ที่คัดสรรมาแล้วว่าคุณภาพดี ใช้งานได้จริง
               </p>
 
               {/* Buttons */}
               <Button onClick={handlePurchaseClick} size="lg" className="bg-blue-600 hover:bg-blue-700 text-white font-bold rounded-full px-8 py-6 shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 cursor-pointer">
-                สั่งซื้อทันที (2,990 บาท)
+                🛒 ช้อปเลย
               </Button>
             </div>
           </div>
@@ -54,11 +54,11 @@ function Hero() {
               {/* Top Right Image */}
               <div className="absolute right-0 top-0 lg:w-11/12">
                 <Image
-                  alt="hero-image"
+                  alt="อุปกรณ์สมาร์ทโฟน"
                   width={560}
                   height={520}
                   className="object-cover aspect-[1.08] rounded-lg"
-                  src="/images/hero/hero2.webp"
+                  src="https://images.unsplash.com/photo-1556656793-08538906a9f8?w=560&h=520&fit=crop"
                   priority
                 />
               </div>
@@ -66,11 +66,11 @@ function Hero() {
               {/* Bottom Left Image with Blur Effect */}
               <div className="absolute bottom-0 left-0 z-10">
                 <Image
-                  alt="hero-image"
+                  alt="หูฟังและอุปกรณ์เสริม"
                   width={350}
                   height={420}
                   className="object-cover rounded-lg"
-                  src="/images/hero/hero1.webp"
+                  src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=350&h=420&fit=crop"
                 />
                 {/* Blur backdrop behind image */}
                 <div className="border-blue-500/10 bg-blue-500/5 absolute -right-6 -top-6 -z-10 h-full w-full border backdrop-blur-[6px] dark:border-white/10 dark:bg-white/10 rounded-lg"></div>
